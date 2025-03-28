@@ -10,14 +10,14 @@ cat "$dest_dir/train_src.cut.txt" > "$pair_dir/train_en"
 cat "$dest_dir/train_trg.cut.txt" > "$pair_dir/train_zh"
 
 # 定义BPE规则文件路径
-EN_BPE_RULES="$pair_dir/bpe.en.20000"
-ZH_BPE_RULES="$pair_dir/bpe.zh.20000"
+EN_BPE_RULES="$pair_dir/bpe.en.50000"
+ZH_BPE_RULES="$pair_dir/bpe.zh.50000"
 
 # 对英文数据训练BPE模型并生成词表
 echo "Training BPE model for English data..."
 subword-nmt learn-joint-bpe-and-vocab \
     -i $1/train_en \
-    -s 20000 \
+    -s 50000 \
     -o $EN_BPE_RULES \
     --write-vocabulary $1/en.vocab
 
@@ -25,7 +25,7 @@ subword-nmt learn-joint-bpe-and-vocab \
 echo "Training BPE model for Chinese data..."
 subword-nmt learn-joint-bpe-and-vocab \
     -i $1/train_zh \
-    -s 20000 \
+    -s 50000 \
     -o $ZH_BPE_RULES \
     --write-vocabulary $1/zh.vocab
 
