@@ -2,8 +2,8 @@
     "bos_idx": 1,
     "eos_idx": 3,
     "pad_idx": 0,
-    "en_vocab_size": 21339,
-    "zh_vocab_size": 23384,
+    "en_vocab_size": 47613,
+    "zh_vocab_size": 54990,
     "max_length": 128,
     "d_model": 512,
     "dim_feedforward": 2048,
@@ -16,6 +16,6 @@
     "beta1": 0.9,
     "beta2": 0.98,
     "eps": 1e-09,
-    "warmup_steps": 5000,
+    "warmup_steps": 4000,
     "share_embedding": false
 }
